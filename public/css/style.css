@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.mainApp{
+    margin: 20px;
+    text-align: center;
+   
+}
+.loginStatus{
+    background-color: cadetblue;
+    padding: 4px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 6px;
+
+}
+.loginStatus a{
+    color: rgb(224, 193, 13);
+    font-size: medium;
+}
+.user_container a:hover{
+    cursor: pointer;
+    color: aqua;
+}
+.logout{
+
+}
+.logout .btnLogout{
+    background-color: aquamarine;
+    padding: 4px;
+    margin: 4px;
+}
+.logout .btnLogout:hover{
+    cursor: pointer;
+}
+
+header h1{
+ color: rgb(216, 31, 133);
+}
+header nav ul{
+    margin-top: 8px;
+    margin-left: 12px;
+    
+
+}
+header nav ul li{
+    display: inline-block;
+    padding: 4px;
+    
+}
+header nav ul li a {
+    text-decoration: none;
+    
+}
+header nav ul li:hover{
+    background-color: rgb(3, 170, 53);
+    border-radius: 4px;
+}
+.main{
+    
+    text-align: center;
+    margin-top: 12px;
+}
+.main h2{
+    color: rgb(102, 44, 3);
+}
+.main p{
+    padding: 16px;
+}
+.login{
+    margin: 33px;
+    padding: 24px;
+    
+    display: block;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+.form_login{
+    padding: 24px;
+    background-color: rgb(138, 235, 125);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+    border-radius: 12px;
+
+   
+}
+.btn{
+    margin: 16px;
+    padding: 6px;
+    
+}
+body{
+    background-color: aquamarine;
+    
+}
+h1{
+    color: rgb(196, 207, 255);
+}
