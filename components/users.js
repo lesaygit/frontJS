@@ -24,7 +24,46 @@ const users = () => {
             })
             .then(data => {
                 // Maneja los datos de la respuesta
-                console.log('Data:', data);
+               // console.log('Data:', data);
+                //procesar datos e enviar generar html dinamico
+                const main = document.getElementById('main');
+                main.innerHTML = ""; // limpiar
+                const table = document.createElement('table');
+                table.innerHTML = `
+                                <thead>
+                                    <tr>
+                                    <th>ID</th>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Created</th>
+                                    <th>Options</th>
+                                    </tr>
+                                </thead>
+                            `;
+                const tbody = document.createElement('tbody');
+                data.forEach(user => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                                    <td>${user.idUser}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.email}</td>
+                                    <td>${user.status}</td>
+                                    <td>${new Date(user.created_at).toLocaleString()}</td>
+                                     <td> 
+                                      <i class="fa fa-pencil action-icon"></i>
+                                      <i class="fa fa-trash action-icon"></i>
+                                      <i class="fa fa-search action-icon"></i>
+                                    </td>
+
+                                `;
+                    tbody.appendChild(tr);
+                });
+
+                table.appendChild(tbody);
+                main.appendChild(table);
+
+
             })
             .catch(error => {
                 // Maneja cualquier error que ocurra
@@ -34,7 +73,7 @@ const users = () => {
         console.error('Username or token not found in sessionStorage');
         alert('Username or token not found in sessionStorage, only loged users cant acces!🔑😉');
     }
-     
+
 };
- 
+
 export default users;

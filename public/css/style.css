@@ -105,3 +105,63 @@ body{
 h1{
     color: rgb(196, 207, 255);
 }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #0de03a;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* button new */
+.btn {
+  border: none;
+  color: rgb(5, 116, 5);
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.info {background-color: #2196F3;} /* Blue */
+.info:hover {background: #0b7dda;}
+
+/* Pagination links */
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+/* Style the active/current link */
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+/* Estilo general para los iconos de acción */
+.action-icon {
+    color: #007bff;         /* Azul */
+    /*font-size: 20px; */       /* Tamaño */
+    margin-right: 12px;   /* Separación */
+    cursor: pointer;        /* Mano al pasar */
+    transition: 0.2s ease;  /* Animación suave */
+}
+
+/* Hover */
+.action-icon:hover {
+    color: #0056b3;         /* Azul más oscuro */
+    transform: scale(1.2);  /* Un poquito más grande */
+}
