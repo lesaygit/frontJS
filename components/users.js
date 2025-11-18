@@ -24,25 +24,46 @@ const users = () => {
             })
             .then(data => {
                 // Maneja los datos de la respuesta
-                console.log('Data:', data);
+               // console.log('Data:', data);
                 //procesar datos e enviar generar html dinamico
                 const main = document.getElementById('main');
-                main.innerHTML='';
-                //let html = `<h2>Usuarios</h2> `;
-                
+                main.innerHTML = ""; // limpiar
+                const table = document.createElement('table');
+                table.innerHTML = `
+                                <thead>
+                                    <tr>
+                                    <th>ID</th>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Created</th>
+                                    <th>Options</th>
+                                    </tr>
+                                </thead>
+                            `;
+                const tbody = document.createElement('tbody');
                 data.forEach(user => {
-                     const div = document.createElement('div');
-                     div.innerHTML = `
-                        <h3>👤 ${user.name}</h3>
-                        <p><strong>ID:</strong> ${user.idUser}</p>
-                        <p><strong>Email:</strong> ${user.email}</p>
-                        <p><strong>Status:</strong> ${user.status}</p>
-                        <p><strong>Creado:</strong> ${new Date(user.created_at).toLocaleString()}</p>
-                    `;
-                     main.appendChild(div);
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                                    <td>${user.idUser}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.email}</td>
+                                    <td>${user.status}</td>
+                                    <td>${new Date(user.created_at).toLocaleString()}</td>
+                                     <td> 
+                                      <i class="fa fa-pencil action-icon"></i>
+                                      <i class="fa fa-trash action-icon"></i>
+                                      <i class="fa fa-search action-icon"></i>
+                                    </td>
+
+                                `;
+                    tbody.appendChild(tr);
                 });
-                //main.innerHTML = html;
-               
+
+                table.appendChild(tbody);
+                main.appendChild(table);
+
+
             })
             .catch(error => {
                 // Maneja cualquier error que ocurra
